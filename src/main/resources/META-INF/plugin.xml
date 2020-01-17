@@ -1,0 +1,77 @@
+<idea-plugin>
+    <id>bdb</id>
+    <name>BDB API Generator</name>
+    <vendor email="simon.hylander@byggdagboken.se" url="https://bitbucket.org/dashboard/overview">Btbucket</vendor>
+    <description>Generate spring boot API!!!!!!!!!!!!!!!!</description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <!--<depends>com.intellij.modules.lang</depends>-->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+
+        <!--<action id="PopupDialogAction"
+                class="se.byggdagboken.generator.api.action.PopupDialogAction"
+                text="A Group Action" description="SDK static grouped action example">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>-->
+
+        <group id="se.byggdagboken.generator.api.action.ApiGroup" text="BDB API" popup="true">
+            <add-to-group group-id="NewGroup" anchor="first" />
+
+            <!-- relative-to-action="PopupDialogAction" -->
+
+            <action id="GroupPopDialogAction"
+                    class="se.byggdagboken.generator.api.action.GroupPopDialogAction"
+                    text="A Group Action"
+                    description="SDK static grouped action example">
+            </action>
+        </group>
+
+        <!--<group id="org.intellij.sdk.action.GroupedActions" text="Static Grouped Actions" popup="true" icon="ActionBasicsIcons.Sdk_default_icon">
+            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.PopupDialogAction"/>
+            <action class="org.intellij.sdk.action.PopupDialogAction" id="org.intellij.sdk.action.GroupPopDialogAction"
+                    text="A Group Action" description="SDK static grouped action example" icon="ActionBasicsIcons.Sdk_default_icon">
+            </action>
+        </group>-->
+
+        <!--<action id="org.intellij.sdk.action.PopupDialogAction"  text="Pop Dialog Action" description="SDK action example">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>-->
+
+        <!--<group id="org.intellij.sdk.action.GroupedActions" text="Static Grouped Actions" popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.PopupDialogAction"/>
+        </group>-->
+
+        <group id="BdbApi.NewActions" popup="true">
+            <!--<separator/>-->
+            <action id="NewBdbApi" class="se.byggdagboken.generator.api.action.CreateApi">
+                <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewFile"/>
+            </action>
+
+            <!--<action id="NewControllerFile" class="se.byggdagboken.generator.api.action.NewControllerFile" icon="BdbIcons.JULIA_ICON">
+                <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewFile"/>
+            </action>-->
+
+            <!--<action id="NewForm" class="com.intellij.uiDesigner.actions.CreateFormAction"/>
+            <action id="NewDialog" class="com.intellij.uiDesigner.actions.CreateDialogAction"/>
+            <action id="NewFormSnapshot" class="com.intellij.uiDesigner.snapShooter.CreateSnapShotAction"/>-->
+            <!--<add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewFile"/>-->
+        </group>
+
+        <!--<action id="Bdb.NewControllerFile" class="se.byggdagboken.generator.api.action.NewControllerFile" icon="BdbIcons.JULIA_ICON">
+            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewFile"/>
+        </action>-->
+    </actions>
+
+    <application-components>
+        <component>
+            <implementation-class>MyProjectComponent</implementation-class>
+        </component>
+    </application-components>
+</idea-plugin>
